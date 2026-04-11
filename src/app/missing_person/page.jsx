@@ -347,7 +347,7 @@ export default function MissingPersonDashboard() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-10 text-center text-gray-400 text-lg">
-            <p>© 2025 Indian Missing Person Posters. All rights reserved.</p>
+            <p>© 2024-2025 Indian Missing Person Posters. All rights reserved.</p>
           </div>
         </div>
       </footer>
