@@ -75,6 +75,7 @@ export default function MissingPersonDashboard() {
               <a href="#how-it-works" className="text-gray-700 hover:text-red-700 font-medium transition-colors">How It Works</a>
               <a href="#about" className="text-gray-700 hover:text-red-700 font-medium transition-colors">About</a>
               <Link href="/missing_person/privacy_policy_url" className="text-gray-700 hover:text-red-700 font-medium transition-colors">Privacy Policy</Link>
+              <Link href="/missing_person/published_standards" className="text-gray-700 hover:text-red-700 font-medium transition-colors">Safety Standards</Link>
               <a href="#download" className="bg-red-700 text-white px-6 py-2.5 rounded-lg hover:bg-red-800 font-semibold transition-all shadow-sm hover:shadow-md">
                 Download App
               </a>
@@ -93,6 +94,7 @@ export default function MissingPersonDashboard() {
               <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">How It Works</a>
               <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">About</a>
               <Link href="/missing_person/privacy_policy_url" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">Privacy Policy</Link>
+              <Link href="/missing_person/published_standards" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">Safety Standards</Link>
               <a href="#download" onClick={() => setMobileMenuOpen(false)} className="block bg-red-700 text-white px-6 py-3 rounded-lg text-center font-semibold mt-2">
                 Download App
               </a>
@@ -337,6 +339,7 @@ export default function MissingPersonDashboard() {
               <h4 className="font-bold mb-6 text-xl">Legal</h4>
               <div className="space-y-4">
                 <Link href="/missing_person/privacy_policy_url" className="block text-gray-400 hover:text-white transition-colors text-lg">Privacy Policy</Link>
+                <Link href="/missing_person/published_standards" className="block text-gray-400 hover:text-white transition-colors text-lg">Safety Standards</Link>
                 <a href="#about" className="block text-gray-400 hover:text-white transition-colors text-lg">About</a>
               </div>
             </div>
