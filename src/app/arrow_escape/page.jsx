@@ -193,7 +193,7 @@ export default function ArrowEscapeDashboard() {
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 1.5rem' }}>
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">Game Features</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Simple to learn, hard to master — here's what makes Arrow Escape addictive</p>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Simple to learn, hard to master — here&apos;s what makes Arrow Escape addictive</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {features.map((feature, idx) => (
@@ -238,7 +238,7 @@ export default function ArrowEscapeDashboard() {
             <div>
               <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8">Why Arrow Escape?</h2>
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-                Looking for a puzzle game that's easy to pick up but keeps you coming back? Arrow Escape combines simple tap mechanics with increasingly complex puzzles that challenge your logic and spatial thinking.
+                Looking for a puzzle game that&apos;s easy to pick up but keeps you coming back? Arrow Escape combines simple tap mechanics with increasingly complex puzzles that challenge your logic and spatial thinking.
               </p>
               <div className="space-y-6">
                 {[
