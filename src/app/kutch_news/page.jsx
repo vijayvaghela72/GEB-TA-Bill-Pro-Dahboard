@@ -381,7 +381,7 @@ export default function KutchNewsDashboard() {
             </div>
             <div>
               <h4 className="font-bold mb-6 text-xl">Contact</h4>
-              <p className="text-gray-400 text-lg mb-2">kutchnewsapp@gmail.com</p>
+              <p className="text-gray-400 text-lg mb-2">flutterdeveloper72@gmail.com</p>
               <p className="text-gray-400 text-lg">Made with ❤️ in Kutch, India</p>
             </div>
           </div>

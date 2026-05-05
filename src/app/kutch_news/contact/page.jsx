@@ -9,7 +9,7 @@ export default function KutchNewsContact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const mailtoLink = `mailto:kutchnewsapp@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`
+    const mailtoLink = `mailto:flutterdeveloper72@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`
     window.location.href = mailtoLink
     setSubmitted(true)
   }
@@ -46,7 +46,7 @@ export default function KutchNewsContact() {
                   <div>
                     <h3 className="font-bold text-gray-900 text-lg mb-1">Email Us</h3>
                     <p className="text-gray-600 mb-2">For general inquiries, feedback, or support</p>
-                    <a href="mailto:kutchnewsapp@gmail.com" className="text-orange-700 font-semibold hover:underline">kutchnewsapp@gmail.com</a>
+                    <a href="mailto:flutterdeveloper72@gmail.com" className="text-orange-700 font-semibold hover:underline">flutterdeveloper72@gmail.com</a>
                   </div>
                 </div>
               </div>
@@ -57,7 +57,7 @@ export default function KutchNewsContact() {
                   <div>
                     <h3 className="font-bold text-gray-900 text-lg mb-1">Report a Bug</h3>
                     <p className="text-gray-600 mb-2">Found an issue? Let us know so we can fix it</p>
-                    <a href="mailto:kutchnewsapp@gmail.com?subject=Bug Report" className="text-orange-700 font-semibold hover:underline">Send Bug Report</a>
+                    <a href="mailto:flutterdeveloper72@gmail.com?subject=Bug Report" className="text-orange-700 font-semibold hover:underline">Send Bug Report</a>
                   </div>
                 </div>
               </div>
@@ -68,7 +68,7 @@ export default function KutchNewsContact() {
                   <div>
                     <h3 className="font-bold text-gray-900 text-lg mb-1">Feature Request</h3>
                     <p className="text-gray-600 mb-2">Have an idea to improve the app? Share it with us</p>
-                    <a href="mailto:kutchnewsapp@gmail.com?subject=Feature Request" className="text-orange-700 font-semibold hover:underline">Suggest a Feature</a>
+                    <a href="mailto:flutterdeveloper72@gmail.com?subject=Feature Request" className="text-orange-700 font-semibold hover:underline">Suggest a Feature</a>
                   </div>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function KutchNewsContact() {
                 <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
                   <div className="text-5xl mb-4">✅</div>
                   <h3 className="text-xl font-bold text-green-800 mb-2">Message Ready!</h3>
-                  <p className="text-green-700">Your email client should open with the message. If not, please email us directly at kutchnewsapp@gmail.com</p>
+                  <p className="text-green-700">Your email client should open with the message. If not, please email us directly at flutterdeveloper72@gmail.com</p>
                   <button onClick={() => setSubmitted(false)} className="mt-4 text-orange-700 font-semibold hover:underline">
                     Send Another Message
                   </button>
