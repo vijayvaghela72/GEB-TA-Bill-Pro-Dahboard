@@ -76,6 +76,7 @@ export default function RSSShaktiDashboard() {
               <a href="#about" className="text-gray-700 hover:text-orange-700 font-medium transition-colors">About</a>
               <Link href="/rss_shakti/privacy_policy" className="text-gray-700 hover:text-orange-700 font-medium transition-colors">Privacy Policy</Link>
               <Link href="/rss_shakti/terms" className="text-gray-700 hover:text-orange-700 font-medium transition-colors">Terms</Link>
+              <Link href="/rss_shakti/child_sefaty" className="text-gray-700 hover:text-orange-700 font-medium transition-colors">Child Safety</Link>
               <a href="#download" className="bg-orange-700 text-white px-6 py-2.5 rounded-lg hover:bg-orange-800 font-semibold transition-all shadow-sm hover:shadow-md">
                 Download App
               </a>
@@ -95,6 +96,7 @@ export default function RSSShaktiDashboard() {
               <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">About</a>
               <Link href="/rss_shakti/privacy_policy" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">Privacy Policy</Link>
               <Link href="/rss_shakti/terms" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">Terms</Link>
+              <Link href="/rss_shakti/child_sefaty" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">Child Safety</Link>
               <a href="#download" onClick={() => setMobileMenuOpen(false)} className="block bg-orange-700 text-white px-6 py-3 rounded-lg text-center font-semibold mt-2">
                 Download App
               </a>
@@ -325,6 +327,7 @@ export default function RSSShaktiDashboard() {
               <div className="space-y-4">
                 <Link href="/rss_shakti/privacy_policy" className="block text-gray-400 hover:text-white transition-colors text-lg">Privacy Policy</Link>
                 <Link href="/rss_shakti/terms" className="block text-gray-400 hover:text-white transition-colors text-lg">Terms & Conditions</Link>
+                <Link href="/rss_shakti/child_sefaty" className="block text-gray-400 hover:text-white transition-colors text-lg">Child Safety Policy</Link>
               </div>
             </div>
             <div>
