@@ -27,9 +27,9 @@ const navLinks = [
 
 export default function MissingPersonDashboard() {
   return (
+
     <div className="min-h-screen overflow-hidden bg-white">
       <SiteHeader brand="Missing Person Posters" homeHref="/missing_person" icon="search" accent="red" links={navLinks} />
-
       <main>
         <section className="relative overflow-hidden bg-[#fff7f6] pb-20 pt-[120px] sm:pb-24 sm:pt-[144px]">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(254,202,202,.55),transparent_32%),radial-gradient(circle_at_90%_50%,rgba(254,215,170,.45),transparent_30%)]" />
@@ -143,11 +143,11 @@ export default function MissingPersonDashboard() {
                 {[['clock', 'Create in minutes', 'A guided process keeps every step focused.'], ['share', 'Reach more people', 'Share through the channels your community uses.'], ['language', 'Be understood', 'Support for English, Hindi and regional languages.'], ['shield', 'Processed locally', 'Poster information stays on your device.']].map(([icon, title, desc]) => (
                   <div key={title} className="rounded-2xl border border-white/10 bg-white/5 p-5"><Icon name={icon} size={21} className="text-red-300" /><h3 className="mt-4 text-sm font-extrabold">{title}</h3><p className="mt-2 text-xs leading-6 text-slate-400">{desc}</p></div>
                 ))}
+
               </div>
             </div>
           </div>
         </section>
-
         <section id="download" className="bg-red-600 py-16 text-white sm:py-20">
           <div className="site-container flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div className="max-w-2xl"><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-red-200">Available on Android</p><h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em] sm:text-4xl">Help important information travel faster.</h2><p className="mt-4 max-w-xl text-base leading-7 text-red-100">Create a clear missing person poster and share it with your community in minutes.</p></div>
@@ -155,7 +155,6 @@ export default function MissingPersonDashboard() {
           </div>
         </section>
       </main>
-
       <SiteFooter brand="Missing Person Posters" icon="search" homeHref="/missing_person" accent="red" description="A simple way to create and share clear missing person posters across Indian communities." links={navLinks} contact="Available through the app" copyright="© 2026 Indian Missing Person Posters. All rights reserved." />
     </div>
   )
