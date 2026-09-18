@@ -1,6 +1,4 @@
-'use client'
-
-import Link from 'next/link'
+import PrivacyPolicyLayout from '../../components/PrivacyPolicyLayout'
 
 const PRIVACY_POLICY = {
   lastUpdated: 'January 2024',
@@ -83,66 +81,6 @@ const PRIVACY_POLICY = {
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 1.5rem' }}>
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="text-3xl">⚡</span>
-              <span className="text-2xl font-black text-gray-900">{PRIVACY_POLICY.appName}</span>
-            </Link>
-            <Link href="/" className="text-gray-600 hover:text-blue-700 font-semibold transition-colors">
-              ← Back to Home
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      {/* Content */}
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1.5rem' }}>
-        <div style={{ backgroundColor: 'white', borderRadius: '1rem', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', padding: '3rem' }}>
-          <div className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">Privacy Policy</h1>
-            <p className="text-xl text-gray-600">Last updated: {PRIVACY_POLICY.lastUpdated}</p>
-          </div>
-
-          <div className="space-y-10 text-gray-700">
-            {PRIVACY_POLICY.sections.map((section, idx) => (
-              <section key={idx}>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{section.title}</h2>
-                <p className="text-lg leading-relaxed mb-4">{section.content}</p>
-                {section.list && (
-                  <ul className="list-disc pl-6 space-y-2 text-lg">
-                    {section.list.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                )}
-                {section.title.includes('Contact Us') && (
-                  <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 mt-4">
-                    <p className="font-semibold text-lg mb-2">📧 Email: {PRIVACY_POLICY.contactEmail}</p>
-                    <p className="font-semibold text-lg">📱 App: {PRIVACY_POLICY.appName}</p>
-                  </div>
-                )}
-              </section>
-            ))}
-
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <p className="text-center text-gray-600 text-lg">
-                By using {PRIVACY_POLICY.appName}, you agree to this Privacy Policy.
-              </p>
-            </div>
-          </div>
-        </div>
-      </main>
-
-      {/* Footer */}
-      <footer className="bg-black text-white py-12">
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 1.5rem', textAlign: 'center' }}>
-          <p className="text-gray-400">© 2024 {PRIVACY_POLICY.appName}. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
+    <PrivacyPolicyLayout policy={PRIVACY_POLICY} homeHref="/" icon="bolt" />
   )
 }

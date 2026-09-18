@@ -1,296 +1,153 @@
-'use client'
+import Icon from '../components/Icon'
+import SiteFooter from '../components/SiteFooter'
+import SiteHeader from '../components/SiteHeader'
 
-import Link from 'next/link'
-import { useState } from 'react'
+const features = [
+  { title: 'Add bill entries', desc: 'Record every journey with the dates, routes, fares and allowance details you need.', icon: 'receipt', tone: 'bg-blue-50 text-blue-700' },
+  { title: 'Manage all bills', desc: 'Find, review and update previous entries from one organised, easy-to-use workspace.', icon: 'list', tone: 'bg-cyan-50 text-cyan-700' },
+  { title: 'Export to Excel', desc: 'Create clean spreadsheets that are ready for reporting, review and record keeping.', icon: 'sheet', tone: 'bg-emerald-50 text-emerald-700' },
+  { title: 'Share reports', desc: 'Send completed bill reports to colleagues or supervisors without extra manual work.', icon: 'share', tone: 'bg-violet-50 text-violet-700' },
+  { title: 'Works offline', desc: 'Use the complete workflow without an internet connection, wherever duty takes you.', icon: 'offline', tone: 'bg-amber-50 text-amber-700' },
+  { title: 'Private by design', desc: 'Your bill information remains stored locally on your device and under your control.', icon: 'shield', tone: 'bg-slate-100 text-slate-700' },
+]
+
+const benefits = [
+  { title: 'Fast data entry', desc: 'A focused form helps you complete routine bill entries in less time.' },
+  { title: 'Reliable offline access', desc: 'Review and prepare bills even when your network connection is unavailable.' },
+  { title: 'Submission-ready reports', desc: 'Generate structured Excel files with a consistent professional format.' },
+  { title: 'No subscription fees', desc: 'All essential tools are available without recurring charges.' },
+]
+
+const navLinks = [
+  { label: 'Features', href: '#features' },
+  { label: 'Benefits', href: '#benefits' },
+  { label: 'Overview', href: '#overview' },
+  { label: 'Privacy', href: '/privacy-policy' },
+]
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-  const features = [
-    {
-      title: 'Add TA Bill Entry',
-      desc: 'Quickly record daily travel allowance entries with all required details',
-      icon: '📝',
-      color: 'from-blue-600 to-blue-800'
-    },
-    {
-      title: 'View & Manage Bills',
-      desc: 'Browse, search, and manage all your TA bill entries in one place',
-      icon: '📋',
-      color: 'from-teal-500 to-emerald-600'
-    },
-    {
-      title: 'Excel Export',
-      desc: 'Download your TA bill data as Excel spreadsheets for reporting and records',
-      icon: '📊',
-      color: 'from-green-600 to-green-800'
-    },
-    {
-      title: 'Share Reports',
-      desc: 'Share your TA bill reports with colleagues and supervisors easily',
-      icon: '📤',
-      color: 'from-purple-500 to-purple-700'
-    },
-    {
-      title: 'Offline Support',
-      desc: 'Works completely offline with local database — no internet required',
-      icon: '📱',
-      color: 'from-orange-500 to-red-500'
-    },
-    {
-      title: 'Secure & Private',
-      desc: 'All data stored locally on your device. Your information stays with you',
-      icon: '🔒',
-      color: 'from-gray-600 to-gray-800'
-    },
-  ]
-
-  const stats = [
-    { value: '1000+', label: 'GEB Employees' },
-    { value: '50K+', label: 'Bills Generated' },
-    { value: '100%', label: 'Offline' },
-    { value: '⚡', label: 'Fast & Easy' },
-  ]
-
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50">
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 1.5rem' }}>
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="text-3xl">⚡</span>
-              <span className="text-2xl font-black text-gray-900">GEB TA Bill</span>
-            </Link>
+    <div className="min-h-screen overflow-hidden bg-white">
+      <SiteHeader brand="GEB TA Bill Pro" homeHref="/" icon="bolt" links={navLinks} />
 
-            <div className="hidden md:flex items-center gap-8">
-              <a href="#features" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">Features</a>
-              <a href="#about" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">About</a>
-              <a href="#stats" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">Stats</a>
-              <a href="#download" className="bg-blue-800 text-white px-6 py-2.5 rounded-lg hover:bg-blue-900 font-semibold transition-all shadow-sm hover:shadow-md">
-                Download App
-              </a>
-            </div>
-
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2">
-              <span className="text-2xl">{mobileMenuOpen ? '✕' : '☰'}</span>
-            </button>
-          </div>
-        </div>
-
-        {mobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 bg-white">
-            <div style={{ padding: '1.5rem' }}>
-              <a href="#features" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">Features</a>
-              <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">About</a>
-              <a href="#stats" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">Stats</a>
-              <a href="#download" onClick={() => setMobileMenuOpen(false)} className="block bg-blue-800 text-white px-6 py-3 rounded-lg text-center font-semibold mt-2">
-                Download App
-              </a>
-            </div>
-          </div>
-        )}
-      </nav>
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <main>
+        <section className="relative overflow-hidden bg-[#f5f8ff] pb-20 pt-[120px] sm:pb-24 sm:pt-[144px]">
+          <div className="soft-grid pointer-events-none absolute inset-0" />
+          <div className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full bg-blue-200/35 blur-3xl" />
+          <div className="site-container relative grid items-center gap-14 lg:grid-cols-[1.05fr_.95fr] lg:gap-20">
             <div>
-              <div className="inline-block mb-6 px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">
-                ⚡ Built for Gujarat Electricity Board Employees
-              </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight">
-                TA Bill Management <span className="text-blue-800">Made Simple</span>
+              <span className="eyebrow mb-6 border-blue-200 bg-white/70 text-blue-700">
+                <Icon name="bolt" size={14} strokeWidth={2.2} /> Built for GEB employees
+              </span>
+              <h1 className="display-title text-slate-950">
+                Travel allowance bills, <span className="text-blue-600">made effortless.</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed">
-                Track, manage, and export your daily Travel Allowance bills with ease. Designed specifically for GEB employees.
+              <p className="section-copy mt-6 max-w-2xl sm:text-lg">
+                A focused mobile app to record journeys, manage daily TA bills and create submission-ready Excel reports—online or offline.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#download" className="bg-blue-800 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-blue-900 shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2">
-                  Download Now
-                  <span>→</span>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a href="#download" className="button-primary bg-blue-600 text-white shadow-lg shadow-blue-900/15 hover:bg-blue-700">
+                  Download the app <Icon name="arrow" size={18} />
                 </a>
-                <a href="#features" className="bg-white text-gray-900 px-8 py-4 rounded-xl text-lg font-bold border-2 border-gray-300 hover:border-blue-700 hover:text-blue-700 shadow-lg hover:shadow-xl transition-all text-center">
-                  Explore Features
-                </a>
+                <a href="#features" className="button-secondary">Explore features</a>
               </div>
-            </div>
-
-            {/* Hero Mockup */}
-            <div className="relative">
-              <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-3xl p-8 shadow-2xl border border-gray-200">
-                <div className="bg-white rounded-2xl p-6 shadow-lg">
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                  </div>
-                  <div className="flex items-center gap-3 mb-5 p-3 bg-blue-800 rounded-lg">
-                    <span className="text-2xl">⚡</span>
-                    <span className="text-white font-bold text-lg">GEB TA Bill Pro</span>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3 mb-4">
-                    <div className="bg-blue-50 rounded-lg p-4 text-center">
-                      <div className="text-2xl font-black text-blue-800">📝</div>
-                      <div className="text-xs text-gray-600 mt-1 font-medium">Add Entry</div>
-                    </div>
-                    <div className="bg-teal-50 rounded-lg p-4 text-center">
-                      <div className="text-2xl font-black text-teal-700">📋</div>
-                      <div className="text-xs text-gray-600 mt-1 font-medium">View Bills</div>
-                    </div>
-                    <div className="bg-green-50 rounded-lg p-4 text-center">
-                      <div className="text-2xl font-black text-green-700">📊</div>
-                      <div className="text-xs text-gray-600 mt-1 font-medium">Export Excel</div>
-                    </div>
-                    <div className="bg-purple-50 rounded-lg p-4 text-center">
-                      <div className="text-2xl font-black text-purple-700">📤</div>
-                      <div className="text-xs text-gray-600 mt-1 font-medium">Share</div>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="bg-gray-50 rounded-lg p-3 flex justify-between items-center">
-                      <span className="text-sm font-medium">Ahmedabad → Vadodara</span>
-                      <span className="text-sm font-bold text-blue-700">₹850</span>
-                    </div>
-                    <div className="bg-gray-50 rounded-lg p-3 flex justify-between items-center">
-                      <span className="text-sm font-medium">Surat → Rajkot</span>
-                      <span className="text-sm font-bold text-blue-700">₹1,200</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section id="stats" className="py-24 bg-gray-900 text-white">
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 1.5rem' }}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
-            {stats.map((stat, idx) => (
-              <div key={idx} className="text-center">
-                <div className="text-5xl md:text-6xl font-black mb-4">{stat.value}</div>
-                <div className="text-gray-400 text-lg">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section id="features" className="py-28 bg-white">
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 1.5rem' }}>
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">Powerful Features</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Everything you need to manage your Travel Allowance bills efficiently</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {features.map((feature, idx) => (
-              <div key={idx} className="group bg-white border-2 border-gray-200 rounded-2xl p-10 hover:border-blue-500 hover:shadow-2xl transition-all duration-300">
-                <div className={`w-20 h-20 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition-transform`}>
-                  {feature.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-lg">{feature.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-28 bg-gradient-to-br from-blue-50 to-indigo-50">
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 1.5rem' }}>
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="order-2 lg:order-1">
-              <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8">Why GEB TA Bill Pro?</h2>
-              <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-                GEB TA Bill Pro is designed specifically for Gujarat Electricity Board employees to manage their daily
-                Travel Allowance bills efficiently. No more paperwork hassles — go digital.
-              </p>
-              <div className="space-y-6">
-                {[
-                  { title: 'Simple & Fast', desc: 'Add TA bill entries in seconds with an intuitive interface' },
-                  { title: 'Works Offline', desc: 'No internet needed — all data stored locally on your device' },
-                  { title: 'Excel Export', desc: 'Generate professional Excel reports for submission' },
-                  { title: 'Free to Use', desc: 'Completely free with no hidden charges or subscriptions' }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-5 bg-white rounded-xl p-6 shadow-sm">
-                    <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                      <span className="text-blue-800 text-2xl font-bold">✓</span>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900 mb-2 text-lg">{item.title}</h4>
-                      <p className="text-gray-600">{item.desc}</p>
-                    </div>
-                  </div>
+              <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-slate-600">
+                {['Offline ready', 'Local data', 'Excel export'].map((item) => (
+                  <span key={item} className="flex items-center gap-2"><Icon name="check" size={16} className="text-blue-600" />{item}</span>
                 ))}
               </div>
             </div>
-            <div className="relative order-1 lg:order-2">
-              <div className="bg-gradient-to-br from-blue-700 to-blue-900 rounded-3xl p-16 text-white shadow-2xl">
-                <div className="text-center">
-                  <div className="text-8xl mb-8">⚡</div>
-                  <h3 className="text-4xl font-bold mb-6">Download Now</h3>
-                  <p className="text-xl mb-10 opacity-90">Available on Google Play Store</p>
-                  <a href="https://play.google.com/store/apps/details?id=com.example.ta_bill" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-blue-800 px-10 py-5 rounded-xl text-xl font-bold hover:bg-gray-100 shadow-lg transition-all">
-                    Get the App →
-                  </a>
+
+            <div className="relative mx-auto w-full max-w-[540px]">
+              <div className="absolute -inset-5 rounded-[32px] bg-gradient-to-br from-blue-200/70 to-indigo-100/30 blur-2xl" />
+              <div className="relative rounded-[28px] border border-white/80 bg-white/85 p-3 shadow-[0_30px_80px_rgba(36,72,130,.18)] backdrop-blur sm:p-5">
+                <div className="overflow-hidden rounded-[21px] border border-slate-200 bg-[#f8fafc]">
+                  <div className="flex items-center justify-between border-b border-slate-200 bg-white px-5 py-4">
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600 text-white"><Icon name="bolt" size={18} /></span>
+                      <div><p className="text-sm font-extrabold text-slate-900">TA Bill overview</p><p className="text-[11px] text-slate-500">September 2026</p></div>
+                    </div>
+                    <span className="rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-bold text-emerald-700">Synced locally</span>
+                  </div>
+                  <div className="p-4 sm:p-5">
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="rounded-2xl bg-blue-600 p-4 text-white"><p className="text-[11px] font-medium text-blue-100">Monthly total</p><p className="mt-2 text-2xl font-extrabold tracking-tight">₹8,420</p></div>
+                      <div className="rounded-2xl border border-slate-200 bg-white p-4"><p className="text-[11px] font-medium text-slate-500">Bill entries</p><p className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900">12</p></div>
+                    </div>
+                    <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-4">
+                      <div className="mb-4 flex items-center justify-between"><p className="text-xs font-bold text-slate-900">Recent journeys</p><span className="text-[11px] font-semibold text-blue-600">View all</span></div>
+                      {[['Ahmedabad', 'Vadodara', '₹850'], ['Surat', 'Rajkot', '₹1,200'], ['Anand', 'Nadiad', '₹420']].map(([from, to, price], index) => (
+                        <div key={from} className={`flex items-center gap-3 py-3 ${index ? 'border-t border-slate-100' : ''}`}>
+                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-600"><Icon name="pin" size={17} /></span>
+                          <div className="min-w-0 flex-1"><p className="truncate text-xs font-bold text-slate-800">{from} → {to}</p><p className="mt-0.5 text-[10px] text-slate-500">Travel allowance</p></div>
+                          <p className="text-xs font-extrabold text-slate-900">{price}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-4 flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-3 text-xs font-bold text-white"><Icon name="sheet" size={16} /> Export monthly report</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Download CTA Section */}
-      <section id="download" className="py-28 bg-gray-900 text-white">
-        <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 1.5rem', textAlign: 'center' }}>
-          <h2 className="text-4xl md:text-5xl font-black mb-8">Ready to Simplify Your TA Bills?</h2>
-          <p className="text-2xl text-gray-300 mb-12">Download GEB TA Bill Pro and start managing your travel allowance today</p>
-          <a href="https://play.google.com/store/apps/details?id=com.example.ta_bill" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-700 text-white px-12 py-5 rounded-xl text-xl font-bold hover:bg-blue-800 shadow-xl hover:shadow-2xl transition-all">
-            Download from Play Store →
-          </a>
-        </div>
-      </section>
+        <section id="overview" className="border-y border-slate-200 bg-white">
+          <div className="site-container grid grid-cols-2 divide-x divide-y divide-slate-200 md:grid-cols-4 md:divide-y-0">
+            {[['1,000+', 'GEB employees'], ['50K+', 'Bills generated'], ['100%', 'Offline capable'], ['4.8/5', 'Simple experience']].map(([value, label]) => (
+              <div key={label} className="px-4 py-8 text-center sm:py-10"><p className="text-2xl font-extrabold tracking-[-0.04em] text-slate-950 sm:text-3xl">{value}</p><p className="mt-2 text-xs font-semibold text-slate-500 sm:text-sm">{label}</p></div>
+            ))}
+          </div>
+        </section>
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-20">
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 1.5rem' }}>
-          <div className="grid md:grid-cols-4 gap-16 mb-16">
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <span className="text-3xl">⚡</span>
-                <span className="text-2xl font-black">GEB TA Bill</span>
-              </div>
-              <p className="text-gray-400 leading-relaxed text-lg">Travel Allowance bill management made simple for GEB employees</p>
+        <section id="features" className="section-space bg-white">
+          <div className="site-container">
+            <div className="mb-12 max-w-2xl sm:mb-14">
+              <span className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue-600">Everything in one place</span>
+              <h2 className="section-title mt-4 text-slate-950">A simpler workflow for every TA bill</h2>
+              <p className="section-copy mt-5">Purpose-built tools remove repetitive work from entry to final report.</p>
             </div>
-            <div>
-              <h4 className="font-bold mb-6 text-xl">Product</h4>
-              <div className="space-y-4">
-                <a href="#features" className="block text-gray-400 hover:text-white transition-colors text-lg">Features</a>
-                <a href="#download" className="block text-gray-400 hover:text-white transition-colors text-lg">Download</a>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-xl">Company</h4>
-              <div className="space-y-4">
-                <a href="#about" className="block text-gray-400 hover:text-white transition-colors text-lg">About</a>
-                <Link href="/privacy-policy" className="block text-gray-400 hover:text-white transition-colors text-lg">Privacy Policy</Link>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-xl">Contact</h4>
-              <p className="text-gray-400 text-lg mb-2">feedback@gebtabill.com</p>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {features.map((feature) => (
+                <article key={feature.title} className="feature-card">
+                  <span className={`icon-tile ${feature.tone}`}><Icon name={feature.icon} size={22} /></span>
+                  <h3 className="mt-6 text-lg font-extrabold tracking-tight text-slate-900">{feature.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{feature.desc}</p>
+                </article>
+              ))}
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-10 text-center text-gray-400 text-lg">
-            <p>© 2024 GEB TA Bill Pro. All rights reserved.</p>
+        </section>
+
+        <section id="benefits" className="section-space bg-slate-50">
+          <div className="site-container grid items-center gap-14 lg:grid-cols-[.88fr_1.12fr] lg:gap-20">
+            <div>
+              <span className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue-600">Designed for real work</span>
+              <h2 className="section-title mt-4 text-slate-950">Less paperwork. More clarity.</h2>
+              <p className="section-copy mt-5">A clean, dependable workflow that stays out of your way—from the first trip entry to the final submission.</p>
+              <a href="#download" className="button-primary mt-8 bg-slate-900 text-white hover:bg-slate-800">Get started <Icon name="arrow" size={18} /></a>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {benefits.map((item, index) => (
+                <article key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-50 text-sm font-extrabold text-blue-700">{index + 1}</span>
+                  <h3 className="mt-5 font-extrabold text-slate-900">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">{item.desc}</p>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </footer>
+        </section>
+
+        <section id="download" className="bg-blue-600 py-16 text-white sm:py-20">
+          <div className="site-container flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+            <div className="max-w-2xl"><p className="text-xs font-extrabold uppercase tracking-[0.18em] text-blue-200">GEB TA Bill Pro</p><h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em] sm:text-4xl">Ready to simplify your TA bills?</h2><p className="mt-4 max-w-xl text-base leading-7 text-blue-100">Download the app and manage every travel allowance entry with speed and confidence.</p></div>
+            <a href="https://play.google.com/store/apps/details?id=com.example.ta_bill" target="_blank" rel="noopener noreferrer" className="button-primary shrink-0 bg-white text-blue-700 shadow-xl hover:bg-blue-50"><Icon name="download" size={18} /> Download from Play Store</a>
+          </div>
+        </section>
+      </main>
+
+      <SiteFooter brand="GEB TA Bill Pro" icon="bolt" homeHref="/" description="Travel allowance bill management made simple for Gujarat Electricity Board employees." links={navLinks} contact="feedback@gebtabill.com" copyright="© 2026 GEB TA Bill Pro. All rights reserved." />
     </div>
   )
 }
