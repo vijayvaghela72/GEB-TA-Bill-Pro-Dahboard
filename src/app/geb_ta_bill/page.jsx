@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Icon from '../../components/Icon'
 import SiteFooter from '../../components/SiteFooter'
 import SiteHeader from '../../components/SiteHeader'
@@ -33,12 +34,12 @@ export default function GebTaBillPage() {
       <main>
         {/* Back to dashboard */}
         <div className="fixed left-4 top-[84px] z-40 hidden sm:block">
-          <a
+          <Link
             href="/"
             className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white/90 px-3 py-1.5 text-xs font-semibold text-slate-600 shadow-sm backdrop-blur hover:bg-slate-50 hover:text-slate-900 transition-colors"
           >
             <Icon name="arrow" size={13} className="rotate-180" /> All Apps
-          </a>
+          </Link>
         </div>
 
         <section className="relative overflow-hidden bg-[#f5f8ff] pb-20 pt-[120px] sm:pb-24 sm:pt-[144px]">
