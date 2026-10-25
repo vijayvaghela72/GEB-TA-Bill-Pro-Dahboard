@@ -14,6 +14,17 @@ const apps = [
     tag: 'Utility',
   },
   {
+    title: 'Gameliyo',
+    desc: 'Dark neon Flutter gaming app — play 500+ HTML5 games via WebView with OTP login.',
+    href: '/gameliyo',
+    icon: 'play',
+    bg: 'bg-emerald-500',
+    light: 'bg-emerald-50',
+    text: 'text-emerald-600',
+    border: 'border-emerald-100',
+    tag: 'Game',
+  },
+  {
     title: 'App Xray',
     desc: 'Inspect, analyse and understand any installed app on your device.',
     href: '/appxray',
