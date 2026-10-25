@@ -25,6 +25,7 @@ const navLinks = [
   { label: 'अध्याय', href: '#chapters' },
   { label: 'प्रगति', href: '#progress' },
   { label: 'Privacy', href: '/vishnu-puran-audio/privacy-policy' },
+  { label: 'Delete Account', href: '/vishnu-puran-audio/delete_account' },
 ]
 
 export default function VishnuPuranAudio() {

@@ -53,6 +53,7 @@ export default function DeathRegistryDashboard() {
               <a href="#features" className="text-gray-700 hover:text-amber-700 font-medium transition-colors">Features</a>
               <a href="#how-it-works" className="text-gray-700 hover:text-amber-700 font-medium transition-colors">How It Works</a>
               <Link href="/death_registry/privacy_policy_url" className="text-gray-700 hover:text-amber-700 font-medium transition-colors">Privacy Policy</Link>
+              <Link href="/death_registry/delete_account" className="text-gray-700 hover:text-slate-700 font-medium transition-colors">Delete Account</Link>
               <a href="#download" className="bg-gray-900 text-white px-6 py-2.5 rounded-lg hover:bg-black font-semibold transition-all shadow-sm hover:shadow-md">
                 Download App
               </a>
@@ -71,6 +72,7 @@ export default function DeathRegistryDashboard() {
               <a href="#features" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">Features</a>
               <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">How It Works</a>
               <Link href="/death_registry/privacy_policy_url" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">Privacy Policy</Link>
+              <Link href="/death_registry/delete_account" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">Delete Account</Link>
               <a href="#download" onClick={() => setMobileMenuOpen(false)} className="block bg-gray-900 text-white px-6 py-3 rounded-lg text-center font-semibold mt-2">
                 Download App
               </a>
@@ -345,6 +347,7 @@ export default function DeathRegistryDashboard() {
               <h4 className="font-bold mb-6 text-xl">Legal</h4>
               <div className="space-y-4">
                 <Link href="/death_registry/privacy_policy_url" className="block text-gray-400 hover:text-white transition-colors text-lg">Privacy Policy</Link>
+                <Link href="/death_registry/delete_account" className="block text-gray-400 hover:text-white transition-colors text-lg">Delete Account</Link>
                 <a href="#about" className="block text-gray-400 hover:text-white transition-colors text-lg">About</a>
               </div>
             </div>

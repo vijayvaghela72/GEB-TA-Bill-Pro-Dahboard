@@ -23,6 +23,7 @@ const navLinks = [
   { label: 'How it works', href: '#how-it-works' },
   { label: 'Why it matters', href: '#about' },
   { label: 'Privacy', href: '/missing_person/privacy_policy_url' },
+  { label: 'Delete Account', href: '/missing_person/delete_account' },
 ]
 
 export default function MissingPersonDashboard() {

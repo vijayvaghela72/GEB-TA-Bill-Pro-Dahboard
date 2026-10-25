@@ -75,6 +75,7 @@ export default function SudokuDashboard() {
               <a href="#how-it-works" className="text-gray-700 hover:text-emerald-700 font-medium transition-colors">How to Play</a>
               <a href="#about" className="text-gray-700 hover:text-emerald-700 font-medium transition-colors">About</a>
               <Link href="/sudoku/privacy_policy" className="text-gray-700 hover:text-emerald-700 font-medium transition-colors">Privacy Policy</Link>
+              <Link href="/sudoku/delete_account" className="text-gray-700 hover:text-teal-700 font-medium transition-colors">Delete Account</Link>
               <a href="#download" className="bg-emerald-700 text-white px-6 py-2.5 rounded-lg hover:bg-emerald-800 font-semibold transition-all shadow-sm hover:shadow-md">
                 Download App
               </a>
@@ -93,6 +94,7 @@ export default function SudokuDashboard() {
               <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">How to Play</a>
               <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">About</a>
               <Link href="/sudoku/privacy_policy" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">Privacy Policy</Link>
+              <Link href="/sudoku/delete_account" onClick={() => setMobileMenuOpen(false)} className="block text-gray-700 font-medium py-2">Delete Account</Link>
               <a href="#download" onClick={() => setMobileMenuOpen(false)} className="block bg-emerald-700 text-white px-6 py-3 rounded-lg text-center font-semibold mt-2">
                 Download App
               </a>
@@ -316,6 +318,7 @@ export default function SudokuDashboard() {
               <h4 className="font-bold mb-6 text-xl">Legal</h4>
               <div className="space-y-4">
                 <Link href="/sudoku/privacy_policy" className="block text-gray-400 hover:text-white transition-colors text-lg">Privacy Policy</Link>
+                <Link href="/sudoku/delete_account" className="block text-gray-400 hover:text-white transition-colors text-lg">Delete Account</Link>
                 <a href="#about" className="block text-gray-400 hover:text-white transition-colors text-lg">About</a>
               </div>
             </div>

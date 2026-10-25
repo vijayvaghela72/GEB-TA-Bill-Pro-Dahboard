@@ -1,0 +1,52 @@
+{
+  "id": "FEAT-001",
+  "type": "feat",
+  "description": "Create 13 delete_account/page.jsx files (one per app) and add Delete Account nav+footer links to all 13 app page.jsx files. The only existing delete page is gameliyo — skip it. Two sub-groups: 5 server-side apps (full accordion + server timeline) and 8 local-data-only apps (simplified device-only steps, no server timeline).",
+  "status": "completed",
+  "steps": [
+    "Read context.json first. Read src/app/gameliyo/delete_account/page.jsx as the reference template for page structure.",
+    "Create src/app/appxray/delete_account/page.jsx — 'use client', white theme, color #7C3AED (violet), emoji 🔍, back link /appxray. deletedData: scan history, saved analysis, app preferences, cache. In-app steps: Open AppXray → overflow menu → Settings → Clear App Data → Confirm. Server timeline: immediately/24h/30days. Footer privacy link: /appxray/privacy_policy.",
+    "Create src/app/arrow_escape/delete_account/page.jsx — 'use client', white theme, color #EA580C (orange), emoji 🏹, back link /arrow_escape. deletedData: game progress, level stars & scores, daily challenge streak, hint balance, achievements. In-app steps: Open Arrow Escape → Settings → Account → Delete Account → Confirm. Server timeline. Footer privacy link: /arrow_escape/privacy_policy.",
+    "Create src/app/geb_ta_bill/delete_account/page.jsx — 'use client', white theme, color #2563EB (blue), emoji ⚡, back link /geb_ta_bill. deletedData: all bill entries, travel records, Excel report history, app settings & preferences. In-app steps: Open GEB TA Bill Pro → Menu → Settings → Delete All Data → Confirm. Server timeline. Footer privacy link: /privacy-policy.",
+    "Create src/app/janazah/delete_account/page.jsx — 'use client', white theme, color #059669 (emerald), emoji ☪️, back link /janazah. deletedData: created notices, saved templates & photos, memorial records, push notification tokens. In-app steps: Open Janazah → Profile icon → Settings → Delete Account → Confirm. Server timeline. Footer privacy link: /janazah/privacy_policy.",
+    "Create src/app/kutch_news/delete_account/page.jsx — 'use client', white theme, color #D97706 (amber), emoji 📰, back link /kutch_news. deletedData: saved articles, bookmarks, notification settings, reading history, category preferences. In-app steps: Open Indian News → Profile / Menu → Settings → Delete Account → Confirm. Server timeline. Footer privacy link: /kutch_news/privacy_policy.",
+    "Create src/app/death_registry/delete_account/page.jsx — 'use client', white theme, color #475569 (slate), emoji 📋, back link /death_registry. LOCAL-DATA-ONLY: simplified in-app steps (Open app → Settings/Menu → Clear All Data / Delete Account → Confirm). No server timeline — replace with 'Your data is stored only on your device. Clearing it takes effect immediately and is permanent.' deletedData: death records, saved forms & documents, app settings. Footer privacy link: /death_registry/privacy_policy_url.",
+    "Create src/app/funeral_poster/delete_account/page.jsx — 'use client', white theme, color #52525B (zinc), emoji 🕊️, back link /funeral_poster. LOCAL-DATA-ONLY. deletedData: saved poster designs, template & photo cache, app settings. Footer privacy link: /funeral_poster/privacy_policy_url.",
+    "Create src/app/sudoku/delete_account/page.jsx — 'use client', white theme, color #0D9488 (teal), emoji 🧩, back link /sudoku. LOCAL-DATA-ONLY. deletedData: puzzle progress, high scores, daily challenge records, settings & preferences. Footer privacy link: /sudoku/privacy_policy.",
+    "Create src/app/maran_shrandhanjali/delete_account/page.jsx — 'use client', white theme, color #9333EA (purple), emoji 🙏, back link /maran_shrandhanjali. LOCAL-DATA-ONLY. deletedData: saved tributes, poster data & images, app settings. Footer privacy link: /maran_shrandhanjali/privacy_policy_url.",
+    "Create src/app/shrandhanjali_poster/delete_account/page.jsx — 'use client', white theme, color #EA580C (orange), emoji 🙏, back link /shrandhanjali_poster. LOCAL-DATA-ONLY. deletedData: shrandhanjali poster designs, template & image cache, app settings. Footer privacy link: /shrandhanjali_poster/privacy_policy_url.",
+    "Create src/app/rss_shakti/delete_account/page.jsx — 'use client', white theme, color #EA580C (orange), emoji 🚩, back link /rss_shakti. LOCAL-DATA-ONLY. deletedData: saved articles & bookmarks, Sankalp attendance records, reading history, app settings. Footer privacy link: /rss_shakti/privacy_policy.",
+    "Create src/app/vishnu-puran-audio/delete_account/page.jsx — 'use client', white theme, color #D97706 (amber), emoji 🕉️, back link /vishnu-puran-audio. LOCAL-DATA-ONLY. deletedData: listening progress, bookmarks & notes, quiz scores, badges & streak data. Footer privacy link: /vishnu-puran-audio/privacy-policy.",
+    "Create src/app/missing_person/delete_account/page.jsx — 'use client', white theme, color #DC2626 (red), emoji 🔍, back link /missing_person. LOCAL-DATA-ONLY. deletedData: saved missing person records, poster data & photos, app settings. Footer privacy link: /missing_person/privacy_policy_url.",
+    "Update src/app/geb_ta_bill/page.jsx: add { label: 'Delete Account', href: '/geb_ta_bill/delete_account' } to navLinks array after the Privacy entry. This single edit covers desktop nav, mobile nav, and SiteFooter 'Explore' column.",
+    "Update src/app/vishnu-puran-audio/page.jsx: add { label: 'Delete Account', href: '/vishnu-puran-audio/delete_account' } to navLinks array after the Privacy entry.",
+    "Update src/app/appxray/page.jsx: three edits — (1) desktop nav div.hidden.md\\:flex: add <Link href='/appxray/delete_account' className='text-gray-700 hover:text-indigo-700 font-medium transition-colors'>Delete Account</Link> after Privacy Policy link; (2) mobileMenuOpen block: add <Link href='/appxray/delete_account' onClick={() => setMobileMenuOpen(false)} className='block text-gray-700 font-medium py-2'>Delete Account</Link> after Privacy Policy link; (3) footer Legal div: add <Link href='/appxray/delete_account' className='block text-gray-400 hover:text-white transition-colors text-lg'>Delete Account</Link> after Privacy Policy link.",
+    "Update src/app/arrow_escape/page.jsx: same three-location edit pattern as appxray. href='/arrow_escape/delete_account', hover:text-orange-700.",
+    "Update src/app/death_registry/page.jsx: same three-location edit pattern. href='/death_registry/delete_account', hover:text-slate-700.",
+    "Update src/app/funeral_poster/page.jsx: same three-location edit pattern. href='/funeral_poster/delete_account', hover:text-zinc-700.",
+    "Update src/app/janazah/page.jsx: same three-location edit pattern. href='/janazah/delete_account', hover:text-emerald-700.",
+    "Update src/app/kutch_news/page.jsx: same three-location edit pattern. href='/kutch_news/delete_account', hover:text-amber-700.",
+    "Update src/app/maran_shrandhanjali/page.jsx: same three-location edit pattern. href='/maran_shrandhanjali/delete_account', hover:text-purple-700.",
+    "Update src/app/missing_person/page.jsx: same three-location edit pattern. href='/missing_person/delete_account', hover:text-red-700.",
+    "Update src/app/rss_shakti/page.jsx: same three-location edit pattern. href='/rss_shakti/delete_account', hover:text-orange-700. The footer Legal column already has Privacy Policy, Terms, and Child Safety — add Delete Account after Privacy Policy.",
+    "Update src/app/shrandhanjali_poster/page.jsx: same three-location edit pattern. href='/shrandhanjali_poster/delete_account', hover:text-orange-700.",
+    "Update src/app/sudoku/page.jsx: same three-location edit pattern. href='/sudoku/delete_account', hover:text-teal-700."
+  ],
+  "acceptance_criteria": [
+    "13 new files exist: src/app/{appxray,arrow_escape,geb_ta_bill,janazah,kutch_news,death_registry,funeral_poster,sudoku,maran_shrandhanjali,shrandhanjali_poster,rss_shakti,missing_person}/delete_account/page.jsx and src/app/vishnu-puran-audio/delete_account/page.jsx",
+    "Each delete page renders a white/light theme (NOT dark neon), includes a warning banner, what-gets-deleted section, two accordion methods (in-app + email), and a footer with privacy policy link",
+    "Local-data-only apps (8) have simplified in-app steps ('Open app → Settings/Menu → Clear All Data → Confirm') and NO server timeline section",
+    "Server-side apps (5) have detailed in-app steps and a 3-step server timeline (immediately/24h/30 days)",
+    "All email method cards show flutterdeveloper72@gmail.com",
+    "geb_ta_bill/page.jsx and vishnu-puran-audio/page.jsx navLinks arrays each include a Delete Account entry",
+    "All 11 inline-nav app page.jsx files have Delete Account links in desktop nav, mobile menu, and footer Legal section",
+    "`npm run build` completes with exit code 0"
+  ],
+  "verification": [
+    "Run `npm run build` from `d:\\Google Ads Projects\\GEB-TA-Bill-Pro-Dashboard` — expect exit code 0",
+    "Confirm 13 new /delete_account routes appear in the build output (e.g., '○ /appxray/delete_account')",
+    "No JSX errors about nested anchors or unknown props"
+  ],
+  "blocked_reason": null,
+  "findings": "All 13 delete_account pages created and all nav/footer links added. missing_person uses SiteHeader/SiteFooter (not inline nav) so it was treated like geb_ta_bill/vishnu-puran-audio — navLinks array updated. Build passes exit code 0, all 52 static routes generated including all 13 new delete_account routes. node_modules was missing and required npm install before build could run."
+}

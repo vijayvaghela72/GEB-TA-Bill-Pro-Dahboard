@@ -24,6 +24,7 @@ const navLinks = [
   { label: 'Benefits', href: '#benefits' },
   { label: 'Overview', href: '#overview' },
   { label: 'Privacy', href: '/privacy-policy' },
+  { label: 'Delete Account', href: '/geb_ta_bill/delete_account' },
 ]
 
 export default function GebTaBillPage() {
