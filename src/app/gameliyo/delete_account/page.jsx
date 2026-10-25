@@ -50,7 +50,7 @@ export default function GameliyoDeleteAccount() {
             Delete Your <span style={{ color: neon.pink }}>Account</span>
           </h1>
           <p style={{ color: '#9CA3AF', fontSize: '1rem', maxWidth: '480px', margin: '0 auto' }}>
-            We're sorry to see you go. Deleting your account is permanent and cannot be undone.
+            We are sorry to see you go. Deleting your account is permanent and cannot be undone.
           </p>
         </div>
 
@@ -111,7 +111,7 @@ export default function GameliyoDeleteAccount() {
                     <li>Open the <strong>Gameliyo</strong> app on your device</li>
                     <li>Tap the <strong>Profile</strong> icon at the bottom</li>
                     <li>Go to <strong>Settings</strong></li>
-                    <li>Tap <strong>"Delete Account"</strong></li>
+                    <li>Tap <strong>&#34;Delete Account&#34;</strong></li>
                     <li>Confirm with your OTP verification</li>
                     <li>Your account will be deleted immediately</li>
                   </ol>
@@ -128,7 +128,7 @@ export default function GameliyoDeleteAccount() {
                   <span style={{ fontSize: '1.5rem' }}>📧</span>
                   <div>
                     <p style={{ fontWeight: 700, color: method === 2 ? neon.cyan : '#fff' }}>Method 2: Request via Email</p>
-                    <p style={{ color: '#9CA3AF', fontSize: '0.8rem' }}>We'll process it within 7 business days</p>
+                    <p style={{ color: '#9CA3AF', fontSize: '0.8rem' }}>We will process it within 7 business days</p>
                   </div>
                 </div>
                 <span style={{ color: method === 2 ? neon.cyan : '#6B7280' }}>{method === 2 ? '▲' : '▼'}</span>
