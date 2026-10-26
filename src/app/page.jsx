@@ -12,6 +12,8 @@ const apps = [
     text: 'text-blue-700',
     border: 'border-blue-100',
     tag: 'Utility',
+    privacyUrl: '/privacy-policy',
+    deleteUrl: '/geb_ta_bill/delete_account',
   },
   {
     title: 'Gameliyo',
@@ -23,6 +25,8 @@ const apps = [
     text: 'text-emerald-600',
     border: 'border-emerald-100',
     tag: 'Game',
+    privacyUrl: '/gameliyo/privacy_policy',
+    deleteUrl: '/gameliyo/delete_account',
   },
   {
     title: 'App Xray',
@@ -34,6 +38,8 @@ const apps = [
     text: 'text-violet-700',
     border: 'border-violet-100',
     tag: 'Tools',
+    privacyUrl: '/appxray/privacy_policy',
+    deleteUrl: '/appxray/delete_account',
   },
   {
     title: 'Arrow Escape',
@@ -45,6 +51,8 @@ const apps = [
     text: 'text-orange-700',
     border: 'border-orange-100',
     tag: 'Game',
+    privacyUrl: '/arrow_escape/privacy_policy',
+    deleteUrl: '/arrow_escape/delete_account',
   },
   {
     title: 'Death Registry',
@@ -56,6 +64,8 @@ const apps = [
     text: 'text-slate-700',
     border: 'border-slate-200',
     tag: 'Registry',
+    privacyUrl: '/death_registry/privacy_policy_url',
+    deleteUrl: '/death_registry/delete_account',
   },
   {
     title: 'Funeral Poster',
@@ -67,6 +77,8 @@ const apps = [
     text: 'text-zinc-700',
     border: 'border-zinc-200',
     tag: 'Design',
+    privacyUrl: '/funeral_poster/privacy_policy_url',
+    deleteUrl: '/funeral_poster/delete_account',
   },
   {
     title: 'Janazah',
@@ -78,6 +90,8 @@ const apps = [
     text: 'text-emerald-700',
     border: 'border-emerald-100',
     tag: 'Community',
+    privacyUrl: '/janazah/privacy_policy',
+    deleteUrl: '/janazah/delete_account',
   },
   {
     title: 'Kutch News',
@@ -89,6 +103,8 @@ const apps = [
     text: 'text-amber-700',
     border: 'border-amber-100',
     tag: 'News',
+    privacyUrl: '/kutch_news/privacy_policy',
+    deleteUrl: '/kutch_news/delete_account',
   },
   {
     title: 'Maran Shrandhanjali',
@@ -100,6 +116,8 @@ const apps = [
     text: 'text-rose-700',
     border: 'border-rose-100',
     tag: 'Memorial',
+    privacyUrl: '/maran_shrandhanjali/privacy_policy_url',
+    deleteUrl: '/maran_shrandhanjali/delete_account',
   },
   {
     title: 'Missing Person',
@@ -111,6 +129,8 @@ const apps = [
     text: 'text-red-700',
     border: 'border-red-100',
     tag: 'Community',
+    privacyUrl: '/missing_person/privacy_policy_url',
+    deleteUrl: '/missing_person/delete_account',
   },
   {
     title: 'RSS Shakti',
@@ -122,6 +142,8 @@ const apps = [
     text: 'text-orange-700',
     border: 'border-orange-100',
     tag: 'News',
+    privacyUrl: '/rss_shakti/privacy_policy',
+    deleteUrl: '/rss_shakti/delete_account',
   },
   {
     title: 'Shrandhanjali Poster',
@@ -133,6 +155,8 @@ const apps = [
     text: 'text-indigo-700',
     border: 'border-indigo-100',
     tag: 'Design',
+    privacyUrl: '/shrandhanjali_poster/privacy_policy_url',
+    deleteUrl: '/shrandhanjali_poster/delete_account',
   },
   {
     title: 'Sudoku',
@@ -144,6 +168,8 @@ const apps = [
     text: 'text-teal-700',
     border: 'border-teal-100',
     tag: 'Game',
+    privacyUrl: '/sudoku/privacy_policy',
+    deleteUrl: '/sudoku/delete_account',
   },
   {
     title: 'Vishnu Puran Audio',
@@ -155,6 +181,8 @@ const apps = [
     text: 'text-yellow-700',
     border: 'border-yellow-200',
     tag: 'Spiritual',
+    privacyUrl: '/vishnu-puran-audio/privacy-policy',
+    deleteUrl: '/vishnu-puran-audio/delete_account',
   },
 ]
 
@@ -210,10 +238,9 @@ export default function DashboardPage() {
         {/* App grid */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {apps.map((app) => (
-            <Link
+            <article
               key={app.href}
-              href={app.href}
-              className={`group flex flex-col rounded-2xl border ${app.border} bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md`}
+              className={`flex flex-col rounded-2xl border ${app.border} bg-white p-5 shadow-sm`}
             >
               {/* Icon + tag row */}
               <div className="flex items-start justify-between">
@@ -226,18 +253,32 @@ export default function DashboardPage() {
               </div>
 
               {/* Title & desc */}
-              <h2 className="mt-4 text-sm font-extrabold tracking-tight text-slate-900 group-hover:text-slate-700">
+              <h2 className="mt-4 text-sm font-extrabold tracking-tight text-slate-900">
                 {app.title}
               </h2>
               <p className="mt-1.5 flex-1 text-xs leading-6 text-slate-500">
                 {app.desc}
               </p>
 
-              {/* View link */}
-              <div className={`mt-4 flex items-center gap-1.5 text-xs font-bold ${app.text}`}>
-                View app <Icon name="arrow" size={13} />
+              {/* View link + pill links */}
+              <div className="mt-4 flex flex-wrap items-center gap-2">
+                <Link href={app.href} className={`flex items-center gap-1 text-xs font-bold ${app.text} hover:opacity-80`}>
+                  View app <Icon name="arrow" size={13} />
+                </Link>
+                <Link
+                  href={app.privacyUrl}
+                  className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-[11px] font-semibold text-slate-500 hover:bg-slate-100 transition-colors"
+                >
+                  🔒 Privacy Policy
+                </Link>
+                <Link
+                  href={app.deleteUrl}
+                  className="inline-flex items-center rounded-full border border-red-100 bg-red-50 px-2.5 py-1 text-[11px] font-semibold text-red-500 hover:bg-red-100 transition-colors"
+                >
+                  🗑️ Delete Account
+                </Link>
               </div>
-            </Link>
+            </article>
           ))}
         </div>
       </main>

@@ -1,0 +1,27 @@
+{
+  "id": "FEAT-002",
+  "type": "feat",
+  "description": "Update the main dashboard src/app/page.jsx to add privacyUrl and deleteUrl fields to all 14 app objects and restructure each card from a <Link> wrapper to an <article> with inner <Link> pills, avoiding nested anchor tags. Independent of FEAT-001 (the pages it links to may be built in either order).",
+  "status": "completed",
+  "steps": [
+    "Read context.json first. Then read src/app/page.jsx in full to understand the current apps array and card JSX.",
+    "Add privacyUrl and deleteUrl fields to every app object in the apps array. Exact values: GEB TA Bill Pro (privacyUrl: '/privacy-policy', deleteUrl: '/geb_ta_bill/delete_account'), Gameliyo ('/gameliyo/privacy_policy', '/gameliyo/delete_account'), App Xray ('/appxray/privacy_policy', '/appxray/delete_account'), Arrow Escape ('/arrow_escape/privacy_policy', '/arrow_escape/delete_account'), Death Registry ('/death_registry/privacy_policy_url', '/death_registry/delete_account'), Funeral Poster ('/funeral_poster/privacy_policy_url', '/funeral_poster/delete_account'), Janazah ('/janazah/privacy_policy', '/janazah/delete_account'), Kutch News ('/kutch_news/privacy_policy', '/kutch_news/delete_account'), Maran Shrandhanjali ('/maran_shrandhanjali/privacy_policy_url', '/maran_shrandhanjali/delete_account'), Missing Person ('/missing_person/privacy_policy_url', '/missing_person/delete_account'), RSS Shakti ('/rss_shakti/privacy_policy', '/rss_shakti/delete_account'), Shrandhanjali Poster ('/shrandhanjali_poster/privacy_policy_url', '/shrandhanjali_poster/delete_account'), Sudoku ('/sudoku/privacy_policy', '/sudoku/delete_account'), Vishnu Puran Audio ('/vishnu-puran-audio/privacy-policy', '/vishnu-puran-audio/delete_account').",
+    "In the app grid JSX, replace the outer <Link key={app.href} href={app.href} className='group flex flex-col rounded-2xl border ...'> wrapper with <article key={app.href} className='flex flex-col rounded-2xl border ${app.border} bg-white p-5 shadow-sm'>. Remove 'group' class and 'hover:-translate-y-0.5 hover:shadow-md' from the article (card-level hover is replaced by per-link hover).",
+    "Inside the article, keep the icon+tag row and title+desc sections unchanged. Replace the bottom 'View app' div with: <div className='mt-4 flex flex-wrap items-center gap-2'><Link href={app.href} className={`flex items-center gap-1 text-xs font-bold ${app.text} hover:opacity-80`}>View app <Icon name='arrow' size={13} /></Link><Link href={app.privacyUrl} className='inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-[11px] font-semibold text-slate-500 hover:bg-slate-100 transition-colors'>🔒 Privacy Policy</Link><Link href={app.deleteUrl} className='inline-flex items-center rounded-full border border-red-100 bg-red-50 px-2.5 py-1 text-[11px] font-semibold text-red-500 hover:bg-red-100 transition-colors'>🗑️ Delete Account</Link></div>.",
+    "Remove the 'group-hover:text-slate-700' class from the h2 title element since there is no longer an outer group Link (just use 'text-slate-900')."
+  ],
+  "acceptance_criteria": [
+    "All 14 app objects in the apps array have privacyUrl and deleteUrl fields matching the specified URLs exactly",
+    "Each card is an <article> element, not a <Link>; there are no nested <a> tags",
+    "Each card shows three links at the bottom: 'View app →', '🔒 Privacy Policy' pill, '🗑️ Delete Account' pill",
+    "Privacy Policy pill links to the correct URL per app (e.g., /privacy-policy for GEB TA Bill, /gameliyo/privacy_policy for Gameliyo, etc.)",
+    "Delete Account pill links to /<appfolder>/delete_account for every app",
+    "`npm run build` completes with exit code 0"
+  ],
+  "verification": [
+    "Run `npm run build` from `d:\\Google Ads Projects\\GEB-TA-Bill-Pro-Dashboard` — expect exit code 0 with no JSX errors",
+    "Confirm the build output includes the root route '○ /' (dashboard) without errors"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}
