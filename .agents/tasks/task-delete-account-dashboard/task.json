@@ -1,0 +1,7 @@
+{
+  "task_id": "task-delete-account-dashboard",
+  "task_description": "Add delete_account pages for 13 apps, add Delete Account nav/footer links to all app pages, and update the main dashboard to show Privacy Policy + Delete Account pill links on every app card.",
+  "status": "completed",
+  "feature_order": ["FEAT-001", "FEAT-002"],
+  "blocked_reason": null
+}

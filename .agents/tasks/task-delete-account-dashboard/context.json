@@ -1,0 +1,33 @@
+{
+  "project_type": "Next.js 15 app-router, Tailwind v4, no test framework",
+  "language": "JavaScript (JSX) — no TypeScript src files in app dir despite tsconfig",
+  "build_system": "Next.js 15 via npm scripts; Tailwind v4 with @tailwindcss/postcss. No turbopack flag — use plain `next build` / `next dev`.",
+  "test_framework": "none",
+  "build_command": "npm run build",
+  "test_command": "npm run build (only verification available)",
+  "verification_instructions": "Run `npm run build` from `d:\\Google Ads Projects\\GEB-TA-Bill-Pro-Dashboard`. Expect exit code 0 and all 13 new /delete_account routes in static page output. No JSX/TS errors.",
+  "snapshot_or_generated_files": null,
+  "environment_constraints": "Windows PowerShell. Paths with spaces must be quoted. Dev server is irrelevant for this task — only `npm run build` matters.",
+  "contribution_requirements": "No AGENTS.md or CONTRIBUTING.md found. Follow existing code style: inline style props for fine-grained colors (hex values), Tailwind for layout/spacing. 'use client' required for pages with useState.",
+  "key_patterns": "1. SiteHeader/SiteFooter apps (geb_ta_bill, vishnu-puran-audio): share `links` (navLinks array) prop — one edit updates desktop nav, mobile nav, and footer. 2. Inline-nav apps (all 11 others): three separate edit locations per page — desktop `hidden md:flex` div, `mobileMenuOpen &&` block, footer Legal div. 3. Delete pages: 'use client' + useState(null) accordion for two method cards. White/light theme (not dark neon). Inline style props for all colors. 4. Local-data-only apps (death_registry, funeral_poster, sudoku, maran_shrandhanjali, shrandhanjali_poster, rss_shakti, vishnu-puran-audio, missing_person): simplified in-app steps, no server timeline section. 5. Dashboard page.jsx: server component, cards are currently <Link> wrappers — must restructure to <article> + inner <Link>s to avoid nested anchors.",
+  "relevant_files": [
+    "src/app/page.jsx",
+    "src/app/gameliyo/delete_account/page.jsx",
+    "src/app/appxray/page.jsx",
+    "src/app/arrow_escape/page.jsx",
+    "src/app/death_registry/page.jsx",
+    "src/app/funeral_poster/page.jsx",
+    "src/app/geb_ta_bill/page.jsx",
+    "src/app/janazah/page.jsx",
+    "src/app/kutch_news/page.jsx",
+    "src/app/maran_shrandhanjali/page.jsx",
+    "src/app/missing_person/page.jsx",
+    "src/app/rss_shakti/page.jsx",
+    "src/app/shrandhanjali_poster/page.jsx",
+    "src/app/sudoku/page.jsx",
+    "src/app/vishnu-puran-audio/page.jsx",
+    "src/components/SiteHeader.jsx",
+    "src/components/SiteFooter.jsx"
+  ],
+  "directory_structure": "src/app/<appfolder>/page.jsx — each app landing page. src/app/<appfolder>/delete_account/page.jsx — delete account page (only gameliyo exists). src/app/<appfolder>/privacy_policy/page.jsx or privacy_policy_url/page.jsx — privacy pages (already exist). src/components/ — shared SiteHeader, SiteFooter, Icon. src/app/page.jsx — main dashboard listing all 14 apps."
+}
